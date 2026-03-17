@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>AI Resume Screening System</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>AI Resume Screening System</h1>
+
+<form method="POST" enctype="multipart/form-data">
+
+<label>Upload Resume (PDF or DOCX)</label>
+<br><br>
+
+<input type="file" name="resume" required>
+
+<br><br>
+
+<label>Enter Job Description</label>
+<br><br>
+
+<textarea name="jobdesc" rows="10" cols="60"></textarea>
+
+<br><br>
+
+<button type="submit">Analyze Resume</button>
+
+</form>
+
+{% if score %}
+
+<h2>Matching Score: {{score}} %</h2>
+
+{% endif %}
+
+</div>
+
+</body>
+</html>
